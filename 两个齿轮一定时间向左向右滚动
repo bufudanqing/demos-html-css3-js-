@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<style type="text/css">
+		#wheel1{
+			width: 150px;
+			height: 150px;
+			background-color: pink;
+			border:5px dotted purple;
+			border-radius: 80px;
+			float: right;
+			/*animation: myrotate2 3s ease-out forwards;*/
+		}
+		.roll-left{
+			animation: roll-left 2s ease-out forwards ;
+			/*animation-iteration-count: infinite;*/
+		}
+		@keyframes roll-left{
+         0%   {}
+         50%  {transform: translate(-500px) rotate(-720deg)}
+         100% {}
+        }
+		#wheel2{
+			width: 150px;
+			height: 150px;
+			background-color: pink;
+			border:5px dotted purple;
+			border-radius: 80px;
+			/*animation: myrotate1 3s ease forwards;*/
+			
+		}
+		.roll-right{
+			animation: roll-right 2s ease forwards ;
+			/*animation-iteration-count: infinite;*/
+		}
+		@keyframes roll-right{
+		  0%  {}
+         50%  {transform: translate(500px) rotate(720deg)}
+         100% {}
+		}
+     
+		p{
+			font-size: 25px;
+			color: white;
+			margin: 30px;
+		}
+	</style>
+	
+</head>
+<body>
+    <div id="wheel1">
+    	<p>Running left</p>
+    </div>
+    <div id ="wheel2">
+    	<p>Running right</p>
+    </div>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+		
+		$(document).ready(function(){
+			setInterval(function(){
+				$("#wheel1").addClass('roll-left').one('animationend',function(){
+					$(this).removeClass('roll-left');
+					$("#wheel2").addClass('roll-right').one('animationend',function(){
+						$(this).removeClass('roll-right');
+					})
+				});
+		    },10000);
+		});
+
+
+	</script>
+</body>
+</html>
+
