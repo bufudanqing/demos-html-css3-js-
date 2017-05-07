@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+	<title>hover 效果 唯美</title>
+	<i class="fa fa-link" aria-hidden="true"></i>
+
+	<style type="text/css" src="font-awesome.css"></style>
+	<style type="text/css">
+		.banner{
+            width: 500px;
+            float: left;
+            margin: 0 10px;
+		}
+		.banner a{
+			display: block;
+			position: relative;
+		}
+		.banner a::before{
+			background:#000 none repeat scroll 0 0;
+			content:"";
+			height: 100%;
+			opacity: 0.5;
+			position: absolute;
+			transform: scaleX(0);
+			transition: all 0.5s ease 0s;
+			width: 100%;
+		}
+		.banner:hover a::before{
+			transform: scaleX(1);
+		}
+		.banner a::after{
+			background:#000 none repeat scroll 0 0;
+			border-radius: 50%;
+			bottom:0;
+			content:"\f0c1";
+			font-family: FontAwesome;
+			height: 60px;
+			left: 0;
+			line-height: 60px;
+			margin:auto;
+			position: absolute;
+			right:0;
+			text-align: center;
+			top:0;
+			transform: scale(3);
+			transition:all 0.5s ease 0s;
+			width: 60px;
+			opacity: 0;
+
+		}
+		.banner:hover a::after{
+			transform: scale(1);
+			opacity: 1;
+		}
+	</style>
+</head>
+<body>
+    <div class="banner-area">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-md-6">
+    				<div class="banner">
+    					<a href="#"><img src="1.jpg" alt="" /></a>
+    				</div>   				
+    			</div>
+    			<div class="col-md-6">
+    				<div class="banner">
+    					<a href="#"><img src="1.jpg" alt="" /></a>
+    				</div>   				
+    			</div>
+    		</div>
+    	</div>
+    </div>
+</body>
+</html>
