@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>hover shake</title>
+	<style type="text/css">
+		div {
+    width: 50px;
+    padding: 50px;
+    background: gold;
+    text-align: center;
+}
+div:hover {    
+    -webkit-animation: shake 0.1s ease-in-out 0.1s infinite alternate;
+}
+
+@-webkit-keyframes shake {
+ from {
+    -webkit-transform: rotate(10deg);
+ }
+ to {
+   -webkit-transform-origin:center center;
+   -webkit-transform: rotate(-10deg);
+ }
+
+}
+	</style>
+</head>
+<body>
+    <div>Hello</div>
+</body>
+</html>
